@@ -1,0 +1,175 @@
+[
+ {
+  "time": 1791706212903.8098,
+  "duration": 6765.95263671875,
+  "passed": 0,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "f",
+    6651
+   ]
+  }
+ },
+ {
+  "time": 1791706247215.025,
+  "duration": 33547.3154296875,
+  "passed": 0,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "f",
+    33455
+   ]
+  }
+ },
+ {
+  "time": 1791706303195.5647,
+  "duration": 14325.436767578125,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    14269
+   ]
+  }
+ },
+ {
+  "time": 1791706427368.5442,
+  "duration": 17488.900634765625,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    17403
+   ]
+  }
+ },
+ {
+  "time": 1791707162355.5557,
+  "duration": 32937.54931640625,
+  "passed": 0,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "f",
+    32827
+   ]
+  }
+ },
+ {
+  "time": 1791707364330.4827,
+  "duration": 28197.181396484375,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    28127
+   ]
+  }
+ },
+ {
+  "time": 1791707435103.8118,
+  "duration": 16667.523193359375,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    16576
+   ]
+  }
+ },
+ {
+  "time": 1791707897517.3823,
+  "duration": 21887.671142578125,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    21740
+   ]
+  }
+ },
+ {
+  "time": 1791708631558.912,
+  "duration": 18582.128173828125,
+  "passed": 1,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 1,
+  "tests": {
+   "pytest::tests/test_home.py::test_logout_functionality": [
+    "p",
+    18464
+   ]
+  }
+ },
+ {
+  "time": 1791708676908.5032,
+  "duration": 31922.616455078125,
+  "passed": 2,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 2,
+  "tests": {
+   "pytest::tests/test_home.py::test_logout_functionality": [
+    "p",
+    17661
+   ],
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    14177
+   ]
+  }
+ },
+ {
+  "time": 1791709354515.6926,
+  "duration": 32196.532470703125,
+  "passed": 2,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 2,
+  "tests": {
+   "pytest::tests/test_home.py::test_logout_functionality": [
+    "p",
+    17940
+   ],
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    14154
+   ]
+  }
+ }
+]
