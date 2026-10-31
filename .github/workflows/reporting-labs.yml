@@ -1,0 +1,80 @@
+name: Playwright automation report with Reporting Labs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  playwright:
+    name: Reports with Reporting Labs
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright/python:v1.55.0-noble
+      options: --user 1001
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m playwright install chromium
+
+      - name: Install Reporting Labs pytest plugin
+        run: python -m pip install --retries 5 reporting-labs==0.1.7
+
+      - name: Run tests
+        id: tests
+        continue-on-error: true
+        run: |
+          python -m pytest tests --rl-output=reporting-labs
+
+      - name: Verify Reporting Labs Report
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          missing=0
+          for report in reporting-labs/report.pdf reporting-labs/index.html; do
+            if [[ -s "$report" ]]; then
+              echo "Generated: $report"
+            else
+              echo "::error::Missing or empty report: $report"
+              missing=1
+            fi
+          done
+          exit "$missing"
+
+      - name: Upload Reporting Labs PDF
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: reporting-labs-pdf
+          path: reporting-labs/report.pdf
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Upload Reporting Labs HTML bundle
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: reporting-labs-html
+          path: reporting-labs/
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Fail if tests failed
+        if: ${{ always() && steps.tests.outcome == 'failure' }}
+        run: exit 1
+
+              
