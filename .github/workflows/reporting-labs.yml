@@ -12,7 +12,7 @@ permissions:
 jobs:
   playwright:
     name: Reports with Reporting Labs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     container:
       image: mcr.microsoft.com/playwright/python:v1.55.0-noble
       options: --user 1001
@@ -56,7 +56,7 @@ jobs:
           exit "$missing"
 
       - name: Upload Reporting Labs PDF
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: ${{ always() }}
         with:
           name: reporting-labs-pdf
@@ -65,7 +65,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload Reporting Labs HTML bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: ${{ always() }}
         with:
           name: reporting-labs-html
