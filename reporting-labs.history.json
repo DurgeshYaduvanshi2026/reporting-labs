@@ -171,5 +171,24 @@
     14154
    ]
   }
+ },
+ {
+  "time": 1793443111882.2886,
+  "duration": 37216.683837890625,
+  "passed": 2,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 2,
+  "tests": {
+   "pytest::tests/test_home.py::test_logout_functionality": [
+    "p",
+    26020
+   ],
+   "pytest::tests/test_login.py::test_login": [
+    "p",
+    11124
+   ]
+  }
  }
 ]
